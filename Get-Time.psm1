@@ -1,26 +1,5 @@
 function Get-Time {
  
-# .SYNOPSIS
-# Get-Time is an advanced Powershell function. It obtains the local system time of a scope of computers or the system time of particular remote computers.
- 
-# .DESCRIPTION
-# Uses the buil-in function Get-Date. Define scope or computer name.
- 
-# .PARAMETER
-# Scope
-# Define the scope. Possible values: "AllServer", "DomainController", "Computer"
- 
-# .PARAMETER
-# Computer
-# Provide computer name of remote computer.
- 
-# .EXAMPLE
-# Get-Time -Scope AllServer
- 
-# .NOTES
-# Author: Patrick Gruenauer, MVP PowerShell
-# Web: https://sid-500.com
- 
 [CmdletBinding()]
  
 param
