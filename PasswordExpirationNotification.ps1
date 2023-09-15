@@ -211,7 +211,7 @@ IT Department
 </body> 
 </html> 
 "@  
-Send-MailMessage -To itdept@thebloodconnection.org -From "Password Notification <itdept@thebloodconnection.org>" -Subject "Password Expiry Notification" -BodyAsHtml $ItReportReturnHTML -SmtpServer <yourdomain-com>.mail.protection.outlook.com
+Send-MailMessage -To <somerecipient@yourdomain.com> -From "Password Notification <somerecipient@yourdomain.com>" -Subject "Password Expiry Notification" -BodyAsHtml $ItReportReturnHTML -SmtpServer <yourdomain-com>.mail.protection.outlook.com
 
 $Admins = Get-ADUser -Filter { (samaccountname -like "*admin*") -and (PasswordLastSet -lt $emailDate) -and (PasswordLastSet -gt $expiredDate) -and (PasswordNeverExpires -eq $false) -and (enabled -eq $true) } -Properties  DisplayName, PasswordNeverExpires, Manager, PasswordLastSet, Mail, "msDS-UserPasswordExpiryTimeComputed" 
 Foreach ($Admin in $Admins) {
